@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filterable Data Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Data Management</h1>
+                <p>Search and filter records dynamically based on multiple criteria</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- Filter Section -->
+            <section class="filters-section">
+                <div class="filters-header">
+                    <h2>Filters</h2>
+                    <button class="reset-btn" id="resetBtn">Reset All</button>
+                </div>
+
+                <div class="filters-grid">
+                    <!-- Search Filter -->
+                    <div class="filter-group">
+                        <label for="searchInput">Search by Name or Email</label>
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Type to search..." 
+                            class="filter-input"
+                        >
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <label for="categorySelect">Category</label>
+                        <select id="categorySelect" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="Standard">Standard</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Enterprise">Enterprise</option>
+                        </select>
+                    </div>
+
+                    <!-- Type Filter -->
+                    <div class="filter-group">
+                        <label for="typeSelect">Type</label>
+                        <select id="typeSelect" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="Business">Business</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Academic">Academic</option>
+                        </select>
+                    </div>
+
+                    <!-- Status Filter -->
+                    <div class="filter-group">
+                        <label for="statusSelect">Status</label>
+                        <select id="statusSelect" class="filter-select">
+                            <option value="">All Statuses</option>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                            <option value="Pending">Pending</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Results Counter -->
+                <div class="results-counter">
+                    Showing <span id="resultCount">0</span> of <span id="totalCount">0</span> records
+                </div>
+            </section>
+
+            <!-- Table Section -->
+            <section class="table-section">
+                <div class="table-wrapper">
+                    <table id="dataTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Category</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Join Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <p>No records found matching your filters.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
